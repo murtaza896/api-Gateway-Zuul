@@ -1,0 +1,9 @@
+zuul:
+  routes:
+    human:
+      path: /human/**
+      serviceId: human
+    cart:
+      path: /auth-service/**
+      serviceId: auth-service
+      sensitive-headers: Authorization
