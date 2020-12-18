@@ -60,7 +60,7 @@ public class ZuulPostRequestFilter extends ZuulFilter{
         {
         	System.out.println(e.getMessage());
         }
-        ctx.getResponse().setHeader("Set-Cookie", "uvw=xyz");
+ //       ctx.getResponse().setHeader("Set-Cookie", "uvw=xyz");
 //        try {
 //        	for(Cookie x: req.getCookies())
 //        	{
