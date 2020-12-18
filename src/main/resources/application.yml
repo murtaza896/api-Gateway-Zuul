@@ -1,9 +1,11 @@
 zuul:
   routes:
-    human:
-      path: /human/**
-      serviceId: human
-    cart:
+    auth-service:
       path: /auth-service/**
       serviceId: auth-service
-      sensitive-headers: Authorization
+      sensitive-headers: 
+    miniar:
+      path: /miniar/**
+      serviceId: miniar
+      sensitive-headers:
+      
