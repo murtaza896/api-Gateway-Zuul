@@ -62,18 +62,18 @@ public class ZuulRequestFilter extends ZuulFilter {
 		}
 		
 		
+			if (response == null || response.getStatusCode().compareTo(HttpStatus.BAD_REQUEST) == 0)
+	        {
+	            // blocks the request
+	            ctx.setSendZuulResponse(false);
+	
+	            // response to client
+	            ctx.setResponseBody("Not authorized");
+	            ctx.getResponse().setHeader("Content-Type", "text/plain;charset=UTF-8");
+	            ctx.setResponseStatusCode(HttpStatus.UNAUTHORIZED.value());
+	        }
+	
 		
-		if (response == null || response.getStatusCode().compareTo(HttpStatus.BAD_REQUEST) == 0)
-        {
-            // blocks the request
-            ctx.setSendZuulResponse(false);
-
-            // response to client
-            ctx.setResponseBody("Not authorized");
-            ctx.getResponse().setHeader("Content-Type", "text/plain;charset=UTF-8");
-            ctx.setResponseStatusCode(HttpStatus.UNAUTHORIZED.value());
-        }
-
 		return null;
 	}
 

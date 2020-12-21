@@ -9,3 +9,5 @@ zuul:
       serviceId: miniar
       sensitive-headers:
   ignored-headers: Access-Control-Allow-Credentials, Access-Control-Allow-Origin
+ribbon:
+  ReadTimeout: 60000
